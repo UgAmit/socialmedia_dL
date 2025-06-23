@@ -374,17 +374,40 @@ pip install -r requirements.txt
 ### **✅ Fully Supported**
 - YouTube, Instagram, Twitter/X, TikTok, Facebook
 - Rumble, Vimeo, PeerTube, Reddit, Dailymotion, Twitch
+- Odysee (LBRY), BitChute
 - Discord (direct attachments)
+
+### **✅ Asian Platforms (Good Support)**
+- 🇨🇳 **Bilibili** (哔哩哔哩) - Chinese video platform
+- 🇯🇵 **Niconico** (ニコニコ動画) - Japanese video platform  
+- 🇨🇳 **Youku** (优酷) - Chinese video platform
 
 ### **⚠️ Limited Support**
 - LinkedIn (requires authentication)
 - Pinterest (some content restricted)
+- 🇨🇳 **Kuaishou** (快手) - Chinese short videos
+- 🇨🇳 **Weibo Video** - Chinese social media
+- 🇨🇳 **Douyin** (抖音) - Chinese TikTok
+- 🇷🇺 **VK Video** - Russian social platform
+- Metacafe, Veoh - Classic video platforms
+
+### **⚠️ Indian Platforms (Experimental)**
+- 🇮🇳 **MX TakaTak** - Indian short videos
+- 🇮🇳 **Moj** - Indian short videos  
+- 🇮🇳 **Chingari** - Indian short videos
+- 🇮🇳 **Josh** - Indian short videos
 
 ### **❓ Experimental**
 - Triller, Likee (depends on yt-dlp updates)
+- DTube (blockchain platform)
+- YouNow, Trovo (live streaming)
 
-### **❌ Minimal Support**
+### **❌ Minimal/Discontinued Support**
 - Snapchat (only public Spotlight content)
+- Periscope (discontinued 2021)
+- Zynn (removed from stores)
+- Tubi (DRM protected)
+- StreamYard (streaming tool only)
 
 ## 🎯 Recent Success Stories
 
@@ -413,17 +436,29 @@ Successfully downloaded LinkedIn post from Nitish Nayyar about "Leadership & Dig
 
 ## 🎉 Summary
 
-**🎬 Total Platforms Supported: 15+**
+**🎬 Total Platforms Supported: 30+**
 
-**Original Platforms**: YouTube, Instagram, Twitter, TikTok, Facebook, Reddit, Dailymotion, Vimeo, Twitch
+**🌍 Global Coverage**: 
+- **Western**: YouTube, Instagram, TikTok, Facebook, Twitter, Reddit, Vimeo, Twitch, Dailymotion
+- **Asian**: Bilibili, Niconico, Youku, Kuaishou, Weibo, Douyin  
+- **Indian**: MX TakaTak, Moj, Chingari, Josh
+- **Alternative**: Rumble, Odysee, BitChute, PeerTube, DTube
+- **Professional**: LinkedIn, Pinterest
+- **Other**: VK, Metacafe, Veoh, Discord
 
-**New Additions**: Rumble, Pinterest, LinkedIn, Triller, Likee, PeerTube, Snapchat, Discord
+**🌟 New Asian & Emerging Platform Support**:
+- 🇨🇳 Chinese platforms: Bilibili, Youku, Kuaishou, Weibo, Douyin
+- 🇯🇵 Japanese platforms: Niconico
+- 🇮🇳 Indian platforms: MX TakaTak, Moj, Chingari, Josh
+- 🇷🇺 Russian platforms: VK Video
+- 🌐 Blockchain platforms: Odysee, DTube
+- 📡 Live platforms: YouNow, Trovo
 
 **📈 Success Rate**: 90%+ for fully supported platforms
 
 **🔄 Regular Updates**: Based on yt-dlp extractor updates
 
-**🚀 Ready to download content from virtually any social media platform!**
+**🚀 Ready to download content from virtually any social media platform globally!**
 
 ---
 
