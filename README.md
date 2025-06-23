@@ -15,7 +15,7 @@
 | 🎵 **TikTok** | `social_media_downloader.py` | Short Videos, User content | ✅ Full Support |
 | 📘 **Facebook** | `social_media_downloader.py` | Videos, Public posts | ✅ Full Support |
 
-### 🆕 **New Platforms (2024)**
+### 🆕 **New Platforms (2025)**
 | Platform | Downloader | Features | Status |
 |----------|------------|----------|---------|
 | 🎯 **Rumble** | `rumble_downloader.py` | Videos, Channels, Quality options | ✅ Full Support |
