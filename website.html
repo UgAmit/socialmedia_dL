@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Universal Social Media Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><span class="icon">🌟</span> Social Media Downloader</h1>
+                <p>Download from YouTube, Instagram, Twitter/X, TikTok & more!</p>
+            </div>
+            <nav class="nav">
+                <a href="#features">Features</a>
+                <a href="#platforms">Platforms</a>
+                <a href="#download">Download</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Universal Social Media Downloader</h2>
+                <p>Download videos, images, and audio from 1000+ platforms with just one URL</p>
+                
+                <!-- Main Download Interface -->
+                <div class="download-card">
+                    <div class="url-input-section">
+                        <div class="input-group">
+                            <input type="text" id="urlInput" placeholder="Paste any social media URL here..." class="url-input">
+                            <button class="detect-btn" onclick="detectPlatform()">
+                                <i class="fas fa-search"></i> Detect
+                            </button>
+                        </div>
+                        <div class="platform-indicator" id="platformIndicator">
+                            <span class="platform-icon" id="platformIcon">🌐</span>
+                            <span class="platform-name" id="platformName">Enter URL to detect platform</span>
+                        </div>
+                    </div>
+
+                    <!-- Media Info Display -->
+                    <div class="media-info" id="mediaInfo" style="display: none;">
+                        <h3>📋 Media Information</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <strong>Title:</strong> <span id="mediaTitle">-</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Creator:</strong> <span id="mediaCreator">-</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Duration:</strong> <span id="mediaDuration">-</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Views:</strong> <span id="mediaViews">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Download Options -->
+                    <div class="download-options" id="downloadOptions" style="display: none;">
+                        <div class="options-grid">
+                            <div class="option-group">
+                                <label>📊 Format</label>
+                                <select id="formatSelect">
+                                    <option value="video">🎬 Video (MP4)</option>
+                                    <option value="audio">🎵 Audio Only (MP3)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label>🎯 Quality</label>
+                                <select id="qualitySelect">
+                                    <option value="best">🏆 Best Available</option>
+                                    <option value="1080p">📺 1080p HD</option>
+                                    <option value="720p">📱 720p</option>
+                                    <option value="480p">💻 480p</option>
+                                    <option value="360p">📞 360p</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="download-actions">
+                            <button class="btn btn-primary" onclick="startDownload()">
+                                <i class="fas fa-download"></i> Download Now
+                            </button>
+                            <button class="btn btn-secondary" onclick="getInfo()">
+                                <i class="fas fa-info-circle"></i> Get Info Only
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Progress Section -->
+                    <div class="progress-section" id="progressSection" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text" id="progressText">Preparing download...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Platforms -->
+    <section id="platforms" class="platforms">
+        <div class="container">
+            <h2>🎯 Supported Platforms</h2>
+            <div class="platforms-grid">
+                <div class="platform-card" data-platform="youtube">
+                    <div class="platform-icon">🎬</div>
+                    <h3>YouTube</h3>
+                    <p>Videos, playlists, channels, live streams</p>
+                </div>
+                <div class="platform-card" data-platform="instagram">
+                    <div class="platform-icon">📱</div>
+                    <h3>Instagram</h3>
+                    <p>Posts, reels, stories, IGTV</p>
+                </div>
+                <div class="platform-card" data-platform="twitter">
+                    <div class="platform-icon">🐦</div>
+                    <h3>Twitter/X</h3>
+                    <p>Videos, images, tweets, Spaces</p>
+                </div>
+                <div class="platform-card" data-platform="tiktok">
+                    <div class="platform-icon">🎵</div>
+                    <h3>TikTok</h3>
+                    <p>Videos, audio, user profiles</p>
+                </div>
+                <div class="platform-card" data-platform="facebook">
+                    <div class="platform-icon">📘</div>
+                    <h3>Facebook</h3>
+                    <p>Videos, posts, stories</p>
+                </div>
+                <div class="platform-card" data-platform="reddit">
+                    <div class="platform-icon">🤖</div>
+                    <h3>Reddit</h3>
+                    <p>Videos, GIFs, media posts</p>
+                </div>
+                <div class="platform-card" data-platform="vimeo">
+                    <div class="platform-icon">🎥</div>
+                    <h3>Vimeo</h3>
+                    <p>High-quality videos</p>
+                </div>
+                <div class="platform-card" data-platform="twitch">
+                    <div class="platform-icon">🎮</div>
+                    <h3>Twitch</h3>
+                    <p>Clips, VODs, highlights</p>
+                </div>
+            </div>
+            <p class="platforms-note">+ 1000+ more platforms supported!</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>✨ Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Auto Detection</h3>
+                    <p>Automatically detects platform and media type from any URL</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>High Quality</h3>
+                    <p>Download in best available quality up to 4K resolution</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Audio Extract</h3>
+                    <p>Extract audio in MP3 format from any video content</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>Organized Storage</h3>
+                    <p>Files organized by platform and creator automatically</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Downloads</h3>
+                    <p>Optimized download speeds with progress tracking</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Safe & Private</h3>
+                    <p>No data collection, completely private downloads</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Methods -->
+    <section id="download" class="download-methods">
+        <div class="container">
+            <h2>💻 Download Methods</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <h3>🌐 Web Interface</h3>
+                    <p>Use this website directly in your browser</p>
+                    <div class="code-block">
+                        <code>Just paste URL and click download!</code>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <h3>🐍 Python Scripts</h3>
+                    <p>Download and run our Python scripts locally</p>
+                    <div class="code-block">
+                        <code>python3 social_media_downloader.py "URL"</code>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <h3>💡 Interactive Mode</h3>
+                    <p>User-friendly command-line interface</p>
+                    <div class="code-block">
+                        <code>python3 social_media_downloader.py</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Examples -->
+    <section class="examples">
+        <div class="container">
+            <h2>🚀 Quick Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card" onclick="loadExample('https://youtube.com/watch?v=dQw4w9WgXcQ')">
+                    <div class="example-platform">🎬 YouTube</div>
+                    <div class="example-url">youtube.com/watch?v=...</div>
+                    <div class="example-type">Video Download</div>
+                </div>
+                <div class="example-card" onclick="loadExample('https://instagram.com/p/ABC123/')">
+                    <div class="example-platform">📱 Instagram</div>
+                    <div class="example-url">instagram.com/p/...</div>
+                    <div class="example-type">Reel Download</div>
+                </div>
+                <div class="example-card" onclick="loadExample('https://twitter.com/user/status/123')">
+                    <div class="example-platform">🐦 Twitter</div>
+                    <div class="example-url">twitter.com/user/status/...</div>
+                    <div class="example-type">Tweet Video</div>
+                </div>
+                <div class="example-card" onclick="loadExample('https://tiktok.com/@user/video/123')">
+                    <div class="example-platform">🎵 TikTok</div>
+                    <div class="example-url">tiktok.com/@user/video/...</div>
+                    <div class="example-type">TikTok Video</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌟 Social Media Downloader</h3>
+                    <p>The ultimate tool for downloading content from any social media platform.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#features">Features</a>
+                    <a href="#platforms">Platforms</a>
+                    <a href="#download">Download</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <p>⚠️ For personal use only. Respect platform terms of service and copyright laws.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Social Media Downloader. Made with ❤️ using yt-dlp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
