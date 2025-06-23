@@ -2,7 +2,7 @@
 
 ## 🌟 Overview
 
-**Complete social media content downloader** जो **15+ platforms** से videos, images, और audio download कर सकता है! यह project **yt-dlp** के powerful extractors का use करता है और हर platform के लिए specialized downloaders provide करता है।
+**A powerful and versatile tool that enables downloading of videos, images, and audio from 30+ social media platforms with ease!
 
 ## 🚀 Supported Platforms
 
